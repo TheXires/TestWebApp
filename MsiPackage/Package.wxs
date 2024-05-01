@@ -1,0 +1,13 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="TestWebApp" Manufacturer="Xires" Version="0.0.0.2" UpgradeCode="96e6c013-7900-4db3-9836-e4959fc0fd09">
+    <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="yes" DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+	<MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <Feature Id="Main">
+      <ComponentGroupRef Id="ExampleComponents" />
+	  <ComponentRef Id="ApplicationShortcut" />
+	  <ComponentRef Id="IIS.Component" />
+	</Feature>
+  </Package>
+</Wix>

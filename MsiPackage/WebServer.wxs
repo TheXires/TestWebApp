@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:iis="http://wixtoolset.org/schemas/v4/wxs/iis" >
+  <Fragment>
+
+      <Component Id="IIS.Component" Guid="b238a46c-bd5b-42f3-940c-a07b38db6266" KeyPath="yes">
+          <iis:WebAppPool Id="TestWebAppPool" Name="Test Web App Pool" ManagedRuntimeVersion="v4.0" ManagedPipelineMode="Integrated" Identity="applicationPoolIdentity" />
+		  <iis:WebSite Id="TestWebSite" AutoStart="yes" ConfigureIfExists="yes" Description="[ProductName]" Directory="INSTALLFOLDER" StartOnInstall="yes">
+			  <iis:WebAddress Id="TestWebAddress" Port="5000" Secure="no"/>
+		  </iis:WebSite>
+		  <iis:WebVirtualDir Id="My.VirtualDir" Alias="foo" Directory="INSTALLFOLDER" WebSite="TestWebSite">
+              <iis:WebApplication Id="TestWebApplication" Name="Web Application 1" WebAppPool="TestWebAppPool"/>
+          </iis:WebVirtualDir>
+      </Component>
+  </Fragment>
+</Wix>

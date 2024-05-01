@@ -1,0 +1,8 @@
+﻿<Project Sdk="WixToolset.Sdk/5.0.0">
+  <ItemGroup>
+    <PackageReference Include="WixToolset.Iis.wixext" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestWebApp\TestWebApp.csproj" />
+  </ItemGroup>
+</Project>
